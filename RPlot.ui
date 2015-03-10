@@ -37,7 +37,7 @@
      <string>Expression:</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Plot">
+   <widget class="QPushButton" name="Plot_sin">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -47,7 +47,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Plot</string>
+     <string>Plot sin</string>
     </property>
    </widget>
    <widget class="GraphicsLayoutWidget" name="graphicsView">
@@ -58,6 +58,32 @@
       <width>581</width>
       <height>501</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Plot_cos">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>260</y>
+      <width>98</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plot cos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Plot_2">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>300</y>
+      <width>98</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plot x^2</string>
     </property>
    </widget>
   </widget>
@@ -78,8 +104,62 @@
    <class>GraphicsLayoutWidget</class>
    <extends>QGraphicsView</extends>
    <header>pyqtgraph</header>
+   <slots>
+    <slot>sin_pressed()</slot>
+    <slot>cos_pressed()</slot>
+    <slot>square_pressed()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Plot_sin</sender>
+   <signal>clicked()</signal>
+   <receiver>graphicsView</receiver>
+   <slot>sin_pressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>706</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Plot_cos</sender>
+   <signal>clicked()</signal>
+   <receiver>graphicsView</receiver>
+   <slot>cos_pressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>514</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Plot_2</sender>
+   <signal>clicked()</signal>
+   <receiver>graphicsView</receiver>
+   <slot>square_pressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>692</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>411</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
