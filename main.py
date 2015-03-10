@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 import sys
 from PyQt4 import QtGui
 from RPlot import Ui_RPlot
